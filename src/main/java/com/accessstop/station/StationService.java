@@ -8,12 +8,16 @@ public class StationService {
 
     @Autowired
     private StationRepository repository;
+    
+    @Autowired
+    private StationValidator validator;
 
     public Iterable<Station> findAll() {
         return repository.findAll();
     }
     
     public Station create(Station station) {
+    		validator.validateCreation(station);
     		return repository.save(station);
     }
     
@@ -22,6 +26,7 @@ public class StationService {
     }
     
     public Station update(Station station) {
+    		validator.validateModification(station);
     		return repository.save(station);
     }
     
