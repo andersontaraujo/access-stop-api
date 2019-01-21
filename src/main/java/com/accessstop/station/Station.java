@@ -1,6 +1,6 @@
 package com.accessstop.station;
 
-import com.accessstop.common.AuditEntity;
+import com.accessstop.common.AuditorEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "stations")
 @EntityListeners(AuditingEntityListener.class)
-public class Station extends AuditEntity {
+public class Station extends AuditorEntity {
 
     private static final long serialVersionUID = 1L;
 

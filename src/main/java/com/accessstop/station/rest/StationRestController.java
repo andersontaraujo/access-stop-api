@@ -1,4 +1,4 @@
-package com.accessstop.station;
+package com.accessstop.station.rest;
 
 import java.net.URI;
 import java.util.List;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.accessstop.station.rest.StationResource;
-import com.accessstop.station.rest.StationsResource;
+import com.accessstop.station.Station;
+import com.accessstop.station.StationService;
 
 import ma.glasnost.orika.MapperFacade;
 

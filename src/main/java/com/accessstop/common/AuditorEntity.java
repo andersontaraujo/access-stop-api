@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class AuditEntity implements Serializable {
+public class AuditorEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
