@@ -27,13 +27,13 @@ public class StationRepositoryImpl implements StationCustomRepository {
         Root<Station> root = criteria.from(Station.class);
         List<Predicate> predicates = new LinkedList<>();
         if (filter.getName() != null) {
-            predicates.add(builder.like(root.get("name"), filter.getName()));
+            predicates.add(builder.like(builder.upper(root.get(Station_.NAME)), "%" + filter.getName().toUpperCase() + "%"));
         }
         if (filter.getAddress() != null) {
-            predicates.add(builder.equal(root.get("address"), filter.getAddress()));
+            predicates.add(builder.like(builder.upper(root.get(Station_.ADDRESS)), "%" + filter.getAddress().toUpperCase() + "%"));
         }
         criteria.select(root).where(predicates.toArray(new Predicate[predicates.size()]));
-		return em.createQuery(criteria).getResultList();
-	}	
+        return em.createQuery(criteria).getResultList();
+	}
 
 }
