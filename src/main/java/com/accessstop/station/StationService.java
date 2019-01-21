@@ -9,7 +9,11 @@ public class StationService {
     @Autowired
     private StationRepository repository;
 
-    Iterable<Station> findAll() {
+    public Iterable<Station> findAll() {
         return repository.findAll();
+    }
+    
+    public Station create(Station station) {
+    		return repository.save(station);
     }
 }

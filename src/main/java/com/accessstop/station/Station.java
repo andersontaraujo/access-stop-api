@@ -41,9 +41,10 @@ public class Station extends AuditEntity {
     private String address;
 
     @Builder
-    public Station(Long number, String name, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
+    public Station(Long number, String name, String address, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
         super(createdAt, createdBy, updatedAt, updatedBy);
         this.number = number;
         this.name = name;
+        this.address = address;
     }
 }
