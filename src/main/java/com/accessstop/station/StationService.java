@@ -1,5 +1,7 @@
 package com.accessstop.station;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,8 @@ public class StationService {
     @Autowired
     private StationValidator validator;
 
-    public Iterable<Station> findAll() {
-        return repository.findAll();
+    public List<Station> search(StationFilter filter) {
+        return repository.search(filter);
     }
     
     public Station create(Station station) {

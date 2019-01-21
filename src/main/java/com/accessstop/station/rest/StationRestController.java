@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.accessstop.station.Station;
+import com.accessstop.station.StationFilter;
 import com.accessstop.station.StationService;
 
 import ma.glasnost.orika.MapperFacade;
@@ -31,8 +33,10 @@ public class StationRestController {
     private MapperFacade mapper;
 
     @GetMapping
-    public ResponseEntity<StationsResource> listAll() {
-        Iterable<Station> entities = service.findAll();
+    public ResponseEntity<StationsResource> search(
+    		@RequestParam(value="name", required=false) String name,
+    		@RequestParam(value="address", required=false) String address) {
+        List<Station> entities = service.search(StationFilter.builder().name(name).address(address).build());
         List<StationResource> resources = mapper.mapAsList(entities, StationResource.class);
         return ResponseEntity.ok().body(StationsResource.builder().stations(resources).build());
     }
