@@ -7,8 +7,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import com.accessstop.common.util.LocalDateTimeConverter;
+
 import ma.glasnost.orika.Mapper;
 import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.converter.ConverterFactory;
 import ma.glasnost.orika.impl.ConfigurableMapper;
 
 @Component
@@ -28,6 +31,7 @@ public class OrikaMapperConfig extends ConfigurableMapper implements Application
 	@Override
 	protected void configure(MapperFactory factory) {
 		this.mapperFactory = factory;
+		addConverter();
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -41,6 +45,11 @@ public class OrikaMapperConfig extends ConfigurableMapper implements Application
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void addMappers(Mapper<?, ?> mapper) {
 		this.mapperFactory.classMap(mapper.getAType(), mapper.getBType()).customize((Mapper) mapper).byDefault().register();
-	}	
+	}
+	
+	private void addConverter() {
+		ConverterFactory converterFactory = this.mapperFactory.getConverterFactory();
+		converterFactory.registerConverter(new LocalDateTimeConverter());
+	}
 
 }

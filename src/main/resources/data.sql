@@ -1,7 +1,6 @@
-/*insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (1, 'TACARUNA', 'Av. Cruz Cabuga, Santo Amaro, Recife - PE, 50040-390', current_timestamp(), 'admin', current_timestamp(), 'admin')
+insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (1, 'TACARUNA', 'Av. Cruz Cabuga, Santo Amaro, Recife - PE, 50040-390', current_timestamp(), 'admin', current_timestamp(), 'admin')
 insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (2, 'SANTA CASA DE MISERICORDIA', 'Av. Cruz Cabuga, Santo Amaro, Recife - PE, 50040-230', current_timestamp(), 'admin', current_timestamp(), 'admin')
 insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (3, 'ARARIPINA', 'Av. Cruz Cabuga, Santo Amaro, Recife - PE, 50040-200', current_timestamp(), 'admin', current_timestamp(), 'admin')
 insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (4, 'IEP', 'Av. Cruz Cabuga, Santo Amaro, Recife - PE, 50040-010', current_timestamp(), 'admin', current_timestamp(), 'admin')
 insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (5, 'TREZE DE MAIO', 'R. do Hospício, 739 - Boa Vista, Recife - PE', current_timestamp(), 'admin', current_timestamp(), 'admin')
-insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (6, 'RIACHUELO', 'R. do Riachuelo, Boa Vista, Recife - PE, 50050-020', current_timestamp(), 'admin', current_timestamp(), 'admin')*/
-select * from stations
+insert into stations (number, name, address, created_at, created_by, updated_at, updated_by) values (6, 'RIACHUELO', 'R. do Riachuelo, Boa Vista, Recife - PE, 50050-020', current_timestamp(), 'admin', current_timestamp(), 'admin')

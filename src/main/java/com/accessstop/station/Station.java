@@ -1,14 +1,6 @@
 package com.accessstop.station;
 
-import com.accessstop.common.AuditorEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import org.joda.time.LocalDateTime;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +8,16 @@ import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.accessstop.common.AuditorEntity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
